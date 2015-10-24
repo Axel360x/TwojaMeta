@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
-from django.core.exceptions import ObjectDoesNotExist
 
-from .models import Product
-
+class NameForm(forms.Form):
+    username = forms.CharField(label='Twoj login', max_length=100)
+    password = forms.CharField(label='Twoje haslo', max_length=100, widget=forms.PasswordInput())

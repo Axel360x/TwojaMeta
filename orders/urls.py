@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^show_products/(?P<provider_name>\w+)', views.show_products),
     url(r'^show_dormitories', views.show_dormitories),
 
-
+    url(r'^formularz', views.get_name),
 
 ]
