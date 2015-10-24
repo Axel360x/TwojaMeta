@@ -4,23 +4,24 @@ from django.http import Http404
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
+from orders.models import Product
 
 def index(request):
     return render(request, 'orders/homepage.html')
     #return HttpResponse("Hello, world. You're at the orders index.")
 
-def create_user(request):
-    return render(request, 'orders/create_user.html')
+def show_contact(request, provider_name):
+    return render(request, 'orders/show_contact.html', {'contact': contact})
 
-def choose_shop(request):
-    return render(request, 'orders/choose_shop.html')
+def show_providers(request, provider_name):
+    return render(request, 'orders/show_provider.html', {'provider_name': provider_name})
 
-def show_contact(request):
-    return render(request, 'orders/show_contact.html')
+def show_dormitories(request, dormitory_name):
+    return render(request, 'orders/show_dormitory.html', {'dormitory_name': dormitory_name})
 
-def show_products(request):
-    products = Products.objects.all()
-    return render(request, 'orders/show_products.html')
+def show_products(request, shop_name):
+    products = Product.objects.all()
+    return render(request, 'orders/show_products.html', {'products': products})
 
 def login(request):
     if request.method != 'POST':

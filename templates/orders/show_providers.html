@@ -1,0 +1,13 @@
+{% block content %}
+
+<div="list-of-providers">
+	Lista dostawcow
+</div>
+
+{% for p in providers %}
+<h2>
+	{{ p.provider_name }}
+</h2>
+
+{% endfor %}
+{% endblock %}
