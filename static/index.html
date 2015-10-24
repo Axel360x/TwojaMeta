@@ -48,7 +48,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/material.min.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.cyan-light_blue.min.css" /> 
     <style>
     #view-source {
       position: fixed;
@@ -63,17 +62,36 @@
   </head>
   <body>
     <div class="meta_site mdl-layout mdl-js-layout has-drawer is-upgraded">
+
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Twoja META</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">user@example.com</a>
+            <a class="mdl-navigation__link" href="#">Wyloguj/Zaloguj</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Twoja Meta</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#">Koszyk</a>
+          <a class="mdl-navigation__link" href="#">Historia zakupów</a>
+          <a class="mdl-navigation__link" href="#">Kontakt</a>
+        </nav>
+      </div>
+
       <main class="mdl-layout__content">
         <div class="meta_site__posts mdl-grid">
-          <div class="mdl-card coffee-pic mdl-cell mdl-cell--6-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
+          <div class="main-meta search-meta mdl-card mdl-card__media mdl-cell mdl-cell--6-col">
               <h3><a href="suppliers.html">Znajdź METE</a></h3>
-            </div>
           </div>
-          <div class="mdl-card coffee-pic mdl-cell mdl-cell--6-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
+          <div class="main-meta create-meta mdl-card mdl-card__media mdl-cell mdl-cell--6-col">
               <h3><a href="entry.html">Stwórz METE</a></h3>
-            </div>
           </div>
         </div>
         <footer class="mdl-mini-footer">
