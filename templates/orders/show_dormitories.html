@@ -1,0 +1,13 @@
+{% block content %}
+
+<div="list-of-products">
+	Lista akademikow
+</div>
+
+{% for d in dormitories %}
+<h2>
+	{{ d.dormitory_name }}
+</h2>
+
+{% endfor %}
+{% endblock %}

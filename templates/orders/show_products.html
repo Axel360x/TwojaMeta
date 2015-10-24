@@ -1,0 +1,13 @@
+{% block content %}
+
+<div="list-of-products">
+	Lista produktów
+</div>
+
+{% for p in products %}
+<h2>
+	{{ p.product_name }}
+</h2>
+
+{% endfor %}
+{% endblock %}
