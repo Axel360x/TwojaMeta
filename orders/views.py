@@ -53,8 +53,10 @@ def get_name(request):
             if user.is_active:
                 login(request, user)
                 #state = "You're successfully logged in!"
-                HttpResponseRedirect('orders/base.html')
+                #HttpResponseRedirect('orders/base.html')
+                return render(request, 'orders/show_dormitories.html')
         else:
+        	#return render(request, 'orders/base.html')
             state = "Your account is not active, please contact the site admin."
 
     return render(request, 'orders/formularz.html', {'state':state})
