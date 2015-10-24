@@ -11,17 +11,23 @@ def index(request):
     #return HttpResponse("Hello, world. You're at the orders index.")
 
 def show_contact(request, provider_name):
-    return render(request, 'orders/show_contact.html', {'contact': contact})
+	context = {'provider_name': provider_name}
+    return render(request, 'orders/show_contact.html', context)
 
-def show_providers(request, provider_name):
-    return render(request, 'orders/show_provider.html', {'provider_name': provider_name})
+def show_providers(request, dormitory_name):
+    providers = Provider.objects.all()
+	context = {'providers': providers}
+    return render(request, 'orders/show_provider.html', context)
 
 def show_dormitories(request, dormitory_name):
-    return render(request, 'orders/show_dormitory.html', {'dormitory_name': dormitory_name})
+    dormitories = Dormitory.objects.all()
+    context = {'dormitory_name': dormitory_name, 'dormitories': dormitories}
+    return render(request, 'orders/show_dormitory.html', context)
 
 def show_products(request, shop_name):
     products = Product.objects.all()
-    return render(request, 'orders/show_products.html', {'products': products})
+    context = {'products': products}
+    return render(request, 'orders/show_products.html', context)
 
 def login(request):
     if request.method != 'POST':
