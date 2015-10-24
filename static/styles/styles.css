@@ -545,13 +545,29 @@ body .meta_site {
 }
 
 .select-supplier.mdl-card {
-  left: 50%;
-  width: 50%;
-  margin: 0% 0 0 -25%;
+    margin: 0 0 0 0;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    border-style: groove;
+    border-color: #EFEFEF;
+    box-shadow: 0 0 32px #888888;
 }
+
+.select-supplier > table {
+  background-color: #EFEFEF;
+}
+
 .select-supplier > .mdl-card__title {
-  color: #464646;
-  background-color: #464646;
+  background-color: #EA2419;
+  font-family: lobster;
+  font-size: 36px;
+  padding-left: 35%;
+}
+
+.select-product.mdl-card {
+  background-color: #EA2419;
+  font-family: lobster;
+  font-size: 36px;
 }
 
 .login-field.mdl-card {
@@ -586,6 +602,34 @@ form > .mdl-button {
   margin-left: -25%;
   margin-bottom: 10px;
 }
+
+.search-meta.main-meta {
+    background-image: url('../images/map.jpg');
+}
+
+.create-meta.main-meta {
+      background-image: url('../images/beer.jpg');
+}
+
+.main-meta.mdl-card__media {
+  background-size: 100%;
+  border-radius: 15px;
+  border-style: groove;
+  border-color: #EFEFEF;
+  box-shadow: 0 0 32px #888888;
+
+}
+
+.main-meta > h3 {
+  padding: 40% 10% 40% 10%;
+  font-size: 64px;
+  font-family: lobster;
+}
+
+h3 > a {
+  text-decoration: none;
+}
+
 
 @font-face {
   font-family: lobster;
