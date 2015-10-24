@@ -54,17 +54,17 @@ def get_name(request):
 
             if user is not None:
                 if user.is_active:
-                    #login(request, user)
+                    login(request, user)
                     return HttpResponse("You're successfully logged in!")
                 else:
                     return HttpResponse("Your account is not active, please contact the site admin.")
             else:
                 return HttpResponse("Your username and/or password were incorrect.")
 
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponse("pierdol sie.")
+        # process the data in form.cleaned_data as required
+        # ...
+        # redirect to a new URL:
+        return HttpResponse("pierdol sie.")
 
     # if a GET (or any other method) we'll create a blank form
     else:
