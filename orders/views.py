@@ -52,7 +52,7 @@ def get_name(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                state = "You're successfully logged in!"
+                #state = "You're successfully logged in!"
                 HttpResponseRedirect('orders/base.html')
         else:
             state = "Your account is not active, please contact the site admin."
