@@ -39,35 +39,22 @@ def show_products(request, shop_name):
 ####################################################################################
 
 
-from .forms import NameForm
 
 def get_name(request):
+    state = "Please log in below..."
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = NameForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            user = request.POST.get('username')
-            passwd = request.POST.get('password')
-            user = authenticate(username=user, password=passwd)
+        
+        user = request.POST.get('username')
+        passwd = request.POST.get('password')
+        user = authenticate(username=user, password=passwd)
 
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponse("You're successfully logged in!")
-                else:
-                    return HttpResponse("Your account is not active, please contact the site admin.")
-            else:
-                return HttpResponse("Your username and/or password were incorrect.")
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                state = "You're successfully logged in!"
+                HttpResponseRedirect('orders/base.html')
+        else:
+            state = "Your account is not active, please contact the site admin."
 
-        # process the data in form.cleaned_data as required
-        # ...
-        # redirect to a new URL:
-        return HttpResponse("pierdol sie.")
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
-
-    return render(request, 'orders/formularz.html', {'form': form})
+    return render(request, 'orders/formularz.html', {'state':state})
