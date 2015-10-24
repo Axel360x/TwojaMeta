@@ -1,16 +1,24 @@
-<html>
-<head>
-<title>Log in</title>
-</head>
-<body>
+          <div class="mdl-cell mdl-cell--4-col"></div>
+          <div class="login-field mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title">
+                  Logowanie
+              </div>
+              <form action="#" method="POST">
+			  
+			  {% csrf_token %}
+			  {{ state }}
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="username" name="username" />
+                  <label class="mdl-textfield__label" for="login">Login...</label>
+                </div>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="password" id="password" name="password"/>
+                  <label class="mdl-textfield__label" for="password">Hasło...</label>
+                </div>
+                <button type="submit" value="Log In" class ="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                  Log In
+                </button>
+              </form>
 
-<form action="" method="post">
-
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-
-</form>
-
-</body>
-</html>
+            </div>
