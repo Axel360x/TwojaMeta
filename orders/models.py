@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
 class Product(models.Model):
@@ -66,3 +68,4 @@ class CustomerUser(User):
 
     def __str__(self):
         return self.customer_name
+
