@@ -1,13 +1,29 @@
 {% block content %}
 
-<div="list-of-providers">
-	Lista dostawcow
-</div>
+<div class="mdl-cell mdl-cell--2-col"></div>
+          <div class="select-supplier mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col">
+            <div class="mdl-card__title mdl-card--accent mdl-card--expand">
+              Wybierz dostawcę
+            </div>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" width="100%">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Dostawca</th>
+                  <th>Dostępność</th>
+                </tr>
+              </thead>
+              <tbody>
+			  {% for p in providers %}
+                <tr onclick="window.document.location='orders/show_products/{{ p.provider_name }}';" style="cursor: pointer;">
+                  <td class="mdl-data-table__cell--non-numeric">{{ p.provider_name }}</td>
+                  <td>{{ p.provider_phone_number }}</td>
+                </tr>
+				{% endfor %}
+              </tbody>
+            </table>
+          </div>
 
-{% for p in providers %}
-<h2>
-	{{ p.provider_name }}
-</h2>
+
 
 {% endfor %}
 {% endblock %}
