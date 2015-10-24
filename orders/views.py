@@ -7,6 +7,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from orders.models import Product, ProviderUser, Dormitory
+from orders.forms import *
+from django.template.loader import get_template
+from django.template import RequestContext
 
 def index(request):
     return render(request, 'orders/base.html')
@@ -30,7 +33,7 @@ def show_products(request, shop_name):
     products = Product.objects.all()
     context = {'products': products}
     return render(request, 'orders/show_products.html', context)
-
+'''
 def login_view(request):
 	return render(request, 'orders/login.html')
 
@@ -51,7 +54,7 @@ def logout(request):
     except KeyError:
         pass
     return HttpResponse("You're logged out.")
-
+'''
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -63,3 +66,39 @@ def register(request):
     return render(request, "orders/register.html", {
         'form': form,
     })
+
+def login_page(request):
+    #if request.method == 'POST':
+    return render(request, 'orders/login_page.html')
+
+def contact_form(request):
+    return render(request, 'orders/contact_form.html')
+
+
+
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
+def contact(request):
+    errors = []
+    if request.method == 'POST':
+        if not request.POST.get('subject', ''):
+            errors.append('Enter a subject.')
+        if not request.POST.get('message', ''):
+            errors.append('Enter a message.')
+        if request.POST.get('email') and '@' not in request.POST['email']:
+            errors.append('Enter a valid e-mail address.')
+        if not errors:
+            send_mail(
+                request.POST['subject'],
+                request.POST['message'],
+                request.POST.get('email', 'noreply@example.com'),
+                ['siteowner@example.com'],
+            )
+            return HttpResponse("dobrze " + request.POST['subject'] + " " + request.POST['message'])
+        else:
+            return HttpResponse("zle")
+    else:
+        return HttpResponse("zle")
+    
