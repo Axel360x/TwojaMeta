@@ -17,6 +17,8 @@
               <tbody>
 			  {% for d in dormitories %}
                 <tr onclick="window.document.location="{% url orders:base %}" " style="cursor: pointer;">
+
+                <tr href="orders/show_provider/{{ d.dormitory_name }}" style="cursor: pointer;">
                   <td class="mdl-data-table__cell--non-numeric">{{ d.dormitory_name }}</td>
                   <td>{{ d.dormitry_address }}</td>
                 </tr>
@@ -26,10 +28,3 @@
           </div>
 
 {% endblock %}
-
-
-<!--
-show_providers/{{ d.dormitory_name }}';"
-
-<tr onclick="window.document.location="{% url orders::show_providers d.dormitory_name %}" " style="cursor: pointer;">
--->
