@@ -666,3 +666,7 @@ h3 > a {
   text-decoration: none;
   color: white;
 }
+
+.badge-1 {
+  background-image: url('images/moneybadge.png');
+}
