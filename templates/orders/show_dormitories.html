@@ -16,7 +16,11 @@
               </thead>
               <tbody>
 			  {% for d in dormitories %}
+<<<<<<< HEAD
                 <tr href="orders/show_provider/{{ d.dormitory_name }}" style="cursor: pointer;">
+=======
+                <tr onclick="window.document.location='show_providers/{{ d.dormitory_name }}';" style="cursor: pointer;">
+>>>>>>> accd1ee9d996379f350d78161ec5aab1f6d4cbff
                   <td class="mdl-data-table__cell--non-numeric">{{ d.dormitory_name }}</td>
                   <td>{{ d.dormitry_address }}</td>
                 </tr>
