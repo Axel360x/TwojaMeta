@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.contrib.auth.models import User, UserManager
 
 class Product(models.Model):
     provider_name = models.ForeignKey('auth.User')			# klucz obcy na providera
@@ -12,20 +13,12 @@ class Product(models.Model):
     def __str__(self):
         return self.product_name
 
-    """ Moze byc tak, ze danego produktu aktualnei nie ma w ofercie (zapasy wyczerpane)
-    Wowczas takiego produktu nie publikujemy. Pytanie tylko jak to sprawdzac (prawdopodobnie 
-    potrzebna metoda sprawdzajaca) """
-    def publish(self):
-        self.save()
-
 class Dormitory(models.Model):
     dormitory_name = models.CharField(max_length = 200)
     dormitory_address = models.CharField(max_length = 200)
 
     def __str__(self):
         return self.dormitory_name
-
-from django.contrib.auth.models import User, UserManager
 
 class ProviderUser(User):
     

@@ -24,14 +24,14 @@ def show_contact(request, provider_name):
 def show_providers(request, dormitory_name):
     providers = ProviderUser.objects.all()
     context = {'providers': providers}
-    return render(request, 'orders/show_provider.html', context)
+    return render(request, 'orders/show_providers.html', context)
 
 def show_dormitories(request):
     dormitories = Dormitory.objects.all()
     context = {'dormitories': dormitories}
     return render(request, 'orders/show_dormitories.html', context)
 
-def show_products(request, shop_name):
+def show_products(request, provider_name):
     products = Product.objects.all()
     context = {'products': products}
     return render(request, 'orders/show_products.html', context)
@@ -54,7 +54,7 @@ def get_name(request):
                 login(request, user)
                 #state = "You're successfully logged in!"
                 #HttpResponseRedirect('orders/base.html')
-                return render(request, 'orders/show_dormitories.html')
+                return render(request, 'orders/option_choice.html')
         else:
         	#return render(request, 'orders/base.html')
             state = "Your account is not active, please contact the site admin."
