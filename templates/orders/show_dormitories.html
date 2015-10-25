@@ -17,7 +17,7 @@
               <tbody>
 			  {% for d in dormitories %}
 
-                <tr href="/orders/show_provider/{{ d.dormitory_name }}" style="cursor: pointer;">
+                <tr onclick="window.document.location='orders/show_provider/{{ d.dormitory_name }}';" style="cursor: pointer;">
                   <td class="mdl-data-table__cell--non-numeric">{{ d.dormitory_name }}</td>
                   <td>{{ d.dormitry_address }}</td>
                 </tr>
