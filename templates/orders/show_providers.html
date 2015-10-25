@@ -16,7 +16,7 @@
               </thead>
               <tbody>
 			  {% for p in providers %}
-                <tr href="orders/show_products/{{ p.provider_name }}" style="cursor: pointer;">
+                <tr onclick="show_products/{{ p.provider_name }}';" style="cursor: pointer;">
                   <td class="mdl-data-table__cell--non-numeric">{{ p.provider_name }}</td>
                   <td>{{ p.provider_phone_number }}</td>
                 </tr>
