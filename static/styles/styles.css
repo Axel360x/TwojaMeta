@@ -626,6 +626,32 @@ form > .mdl-button {
   font-family: lobster;
 }
 
+.contact-card.mdl-card {
+  border-radius: 15px;
+  border-style: groove;
+  border-color: #EFEFEF;
+  box-shadow: 0 0 32px #888888;
+  background-color: #EFEFEF;
+  font-size: 16px;
+  font-size: 16px;
+  font-family: lobster;
+
+  padding-left: 0%;
+}
+
+
+
+.contact-card.mdl-card__title {
+  background-color: #EA2419;
+  font-size: 36px;
+  max-height: 150px;
+}
+
+.contact-card > .mdl-card__supporting-text {
+  font-size: 20px;
+  padding-left: 25%;
+}
+
 h3 > a {
   text-decoration: none;
 }
@@ -634,4 +660,9 @@ h3 > a {
 @font-face {
   font-family: lobster;
   src: url('../fonts/Lobster.otf');
+}
+
+.mdl-navigation > .mdl-badge {
+  text-decoration: none;
+  color: white;
 }

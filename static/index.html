@@ -1,5 +1,3 @@
-{% load staticfiles %}
-
 <!doctype html>
 <!--
   Material Design Lite
@@ -27,19 +25,19 @@
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="{% static "images/android-desktop.png" %} ">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="{% static "images/ios-desktop.png" %} ">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="{% static "images/touch/ms-touch-icon-144x144-precomposed.png" %} ">
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <link rel="shortcut icon" href="{% static "images/favicon.png" %} "/>
+    <link rel="shortcut icon" href="images/favicon.png"/>
 
     <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
@@ -48,8 +46,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "styles/material.min.css" %} ">
-    <link rel="stylesheet" href="{% static "styles/styles.css" %} ">
+    <link rel="stylesheet" href="styles/material.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <style>
     #view-source {
       position: fixed;
@@ -73,6 +71,7 @@
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation -->
           <nav class="mdl-navigation">
+            <a class="mdl-badge" data-badge="2" href="#">Odznaki</a>
             <a class="mdl-navigation__link" href="#">user@example.com</a>
             <a class="mdl-navigation__link" href="#">Wyloguj/Zaloguj</a>
           </nav>
@@ -83,7 +82,7 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="#">Koszyk</a>
           <a class="mdl-navigation__link" href="#">Historia zakupów</a>
-          <a class="mdl-navigation__link" href="#">Kontakt</a>
+          <a class="mdl-navigation__link" href="orders/show_contact.html">Kontakt</a>
         </nav>
       </div>
 
@@ -118,7 +117,7 @@
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
-    <script src="{% static "scripts/material.min.js" %}"></script>
+    <script src="scripts/material.min.js"></script>
   </body>
   <script>
     Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
